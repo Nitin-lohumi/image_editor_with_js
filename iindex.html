@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript_api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="main_box">
+    <h1>Image Editor</h1>
+    <div class="box1">
+        <div class="inner_box1">
+          <p>filter</p>
+          <div class="filter">
+          <button onclick="brightness()">brightness</button>
+          <button onclick="contrast()">contrast</button>
+          <button onclick="sharpness()">sharpness</button>
+          <button onclick="beauty()">beauty</button>
+          </div>
+          <div class="instant_value">
+            <p id="filter_item">brightness</p>
+            <input type="range" value="1" max="10" step="1" min="0" id="range_input" onchange="setRange()">
+            <i id="per">?</i>
+          </div>
+          <div class="flips">
+            <p>Rotate and flips</p>
+             <div style="display: flex; justify-content: space-around; align-items: center; padding:10px;">
+             <button>1</button>
+             <button>2</button>
+             <button>3</button>
+             <button>4</button>
+             </div>
+          </div>
+
+        </div>
+        <div class="inner_box2">
+           <img  alt="" id="img">
+           <p id="alter">please select your image</p>
+        </div>
+    </div>
+    <div class="box2">
+        <div><button>reset</button></div>
+        <div class="btn_choose">
+            <input type="file" id="file_input" accept="image/*" hidden>
+            <button id="choose_image">choose</button>
+            <button id="save_image">save</button>
+        </div>
+    </div>
+   </div>
+</body>
+<script src="script.js"></script>
+</html>
