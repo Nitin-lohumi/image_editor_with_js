@@ -15,12 +15,12 @@
           <div class="filter">
           <button onclick="brightness()">brightness</button>
           <button onclick="contrast()">contrast</button>
-          <button onclick="sharpness()">sharpness</button>
-          <button onclick="beauty()">beauty</button>
+          <button onclick="saturate()">saturate</button>
+          <button onclick="sepia()">sepia</button>
           </div>
           <div class="instant_value">
             <p id="filter_item">brightness</p>
-            <input type="range" value="1" max="10" step="1" min="0" id="range_input" onchange="setRange()">
+            <input type="range" value="1" max="10" step="1" min="0" id="range_input">
             <i id="per">?</i>
           </div>
           <div class="flips">
@@ -32,7 +32,6 @@
              <button>4</button>
              </div>
           </div>
-
         </div>
         <div class="inner_box2">
            <img  alt="" id="img">

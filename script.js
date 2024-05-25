@@ -6,41 +6,50 @@ const filter_item = document.getElementById("filter_item");
 const per = document.getElementById("per");
 let input = document.getElementById('range_input');
 const img = document.getElementById("img");
-
 const loadImage = ()=>{
     let file = file_input.files[0];
      img.src =URL.createObjectURL(file);
     alert.style.display="none";
+    img.addEventListener("load",()=>{
+        document.querySelector(".box1").classList.remove("disable");
+    })
 }
-file_input.addEventListener("change",loadImage);
-choose_image.addEventListener("click",()=>{file_input.click()});
 
 function brightness(){
     filter_item.innerHTML = "brightness";
-    input.addEventListener("input",(event)=>{
-        per.innerHTML= event.target.value;
-        img.style=`filter:brightness(${per.innerHTML})`
-     });
 }
 function contrast(){
-    per.innerHTML="1";
     filter_item.innerHTML = "contrast";
-    input.addEventListener("input",(event)=>{
-        per.innerHTML= event.target.value ;
-     });
 }
-function sharpness(){
-    filter_item.innerHTML = "sharpness";
-    input.addEventListener("input",(event)=>{
-        per.innerHTML= event.target.value ;
-     });
+function saturate(){
+    filter_item.innerHTML = "saturate";
 }
-function beauty(){
-    filter_item.innerHTML = "beauty";
-    input.addEventListener("input",(event)=>{
-        per.innerHTML= event.target.value ;
-     });
+function sepia(){
+    filter_item.innerHTML = "sepia";
 }
-function setRange(){
-   
-}
+input.addEventListener("input",(event)=>{
+    if(filter_item.innerHTML==="brightness"){
+        per.innerHTML="2";
+        per.innerHTML= event.target.value;
+        img.style=`filter:brightness(${per.innerHTML})`;
+    }
+    else if(filter_item.innerHTML==="contrast"){
+        per.innerHTML="2";
+        per.innerHTML= event.target.value;
+        img.style=`filter:contrast(${per.innerHTML})`;
+    }
+    else if(filter_item.innerHTML==="saturate"){
+        per.innerHTML="2";
+        per.innerHTML= event.target.value;
+        img.style=`filter:saturate(${per.innerHTML*1/3})`;
+    }
+    else if(filter_item.innerHTML==="sepia"){
+        per.innerHTML="2";
+        per.innerHTML= event.target.value;
+        img.style=`filter:saturate(${per.innerHTML*.3})`;
+    }
+
+});
+
+file_input.addEventListener("change",loadImage);
+choose_image.addEventListener("click",()=>{file_input.click()});
