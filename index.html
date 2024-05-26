@@ -9,7 +9,7 @@
 <body>
    <div class="main_box">
     <h1>Image Editor</h1>
-    <div class="box1">
+    <div class="box1 " >
         <div class="inner_box1">
           <p>filter</p>
           <div class="filter">
@@ -23,15 +23,6 @@
             <input type="range" value="1" max="10" step="1" min="0" id="range_input">
             <i id="per">?</i>
           </div>
-          <div class="flips">
-            <p>Rotate and flips</p>
-             <div style="display: flex; justify-content: space-around; align-items: center; padding:10px;">
-             <button>1</button>
-             <button>2</button>
-             <button>3</button>
-             <button>4</button>
-             </div>
-          </div>
         </div>
         <div class="inner_box2">
            <img  alt="" id="img">
@@ -39,11 +30,11 @@
         </div>
     </div>
     <div class="box2">
-        <div><button>reset</button></div>
+        <div><button onclick="reset()">reset</button></div>
         <div class="btn_choose">
             <input type="file" id="file_input" accept="image/*" hidden>
             <button id="choose_image">choose</button>
-            <button id="save_image">save</button>
+            <button id="downloadImage">download</button>
         </div>
     </div>
    </div>
